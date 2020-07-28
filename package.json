@@ -17,14 +17,15 @@
     "styled-tools": "^1.7.2"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.0.0-rc.3",
+    "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-docs": "^6.0.0-rc.3",
     "@storybook/addon-knobs": "^6.0.0-rc.3",
-    "@storybook/addon-links": "^6.0.0-rc.3",
+    "@storybook/addon-links": "^5.3.19",
     "@storybook/addon-storyshots": "^6.0.0-rc.3",
     "@storybook/addon-viewport": "^6.0.0-rc.3",
-    "@storybook/addons": "^6.0.0-rc.3",
-    "@storybook/react": "^6.0.0-rc.3",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/preset-create-react-app": "^3.1.4",
+    "@storybook/react": "^5.3.19",
     "babel-loader": "^8.1.0",
     "chance": "^1.1.6",
     "cz-conventional-changelog": "^3.2.0",
@@ -43,7 +44,9 @@
     "test:update": "npm test -- -u",
     "update:packages": "npx npm-check -u",
     "semantic-release": "semantic-release",
-    "commit": "git cz"
+    "commit": "git cz",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -59,6 +62,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
+    }
   },
   "config": {
     "commitizen": {
