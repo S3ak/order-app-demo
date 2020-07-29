@@ -6,11 +6,12 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
     "design-system-utils": "^1.5.0",
+    "react": "^16.13.1",
+    "react-content-loader": "^5.1.0",
+    "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
+    "react-scripts": "3.4.1",
     "styled-components": "^5.1.1",
     "styled-media-query": "^2.1.2",
     "styled-normalize": "^8.0.7",
@@ -44,7 +45,7 @@
     "test:update": "npm test -- -u",
     "update:packages": "npx npm-check -u",
     "semantic-release": "semantic-release",
-    "commit": "git cz",
+    "commit": "npx git-cz",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
@@ -65,7 +66,6 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test",
       "pre-push": "npm test"
     }
   },

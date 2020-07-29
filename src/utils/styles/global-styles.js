@@ -76,10 +76,6 @@ export const GlobalStyles = createGlobalStyle`
       Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
       sans-serif;
   }
-
-  footer {
-    grid
-  }
 `;
 
 export default GlobalStyles;
