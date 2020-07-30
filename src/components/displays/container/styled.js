@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import ds from "../../../utils/styles/design-system";
 
 export const Wrapper = styled.div`
