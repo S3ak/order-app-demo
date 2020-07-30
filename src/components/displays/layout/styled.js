@@ -5,7 +5,8 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   grid-template-columns: auto;
-  grid-template-rows: 40px auto;
+  // TODO: Get px value
+  grid-template-rows: 60pt auto;
 `;
 
 export const HeaderSection = styled.section`
