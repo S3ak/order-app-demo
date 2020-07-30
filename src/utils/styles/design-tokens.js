@@ -1,5 +1,3 @@
-import DesignSystem from "design-system-utils";
-
 import basePalette from "./baseColourPalette";
 
 const fontFamily = {
@@ -17,7 +15,7 @@ const transitions = {
 
 const colorPalette = basePalette;
 
-export const baseTheme = {
+export const designTokens = {
   type: {
     baseFontSize: "14px",
 
@@ -50,17 +48,18 @@ export const baseTheme = {
     colorPalette,
 
     brand: {
-      red: "#e82219",
-      deeporange: "#ff7200",
-      orange: "#ff9500",
-      green: "#c4d000",
-      teal: "#1aa5c8",
-      navy: "#0052da",
+      red: "#EA433D",
+      green: "#00C853",
+      black: "#000000",
+      grey: "#E8E8E8",
+      darkGrey: "#8E8F90",
+      white: "#FFF",
     },
   },
 
   breakpoints: {
-    s: 320,
+    /* NOTE: Should be 320 hich is Iphone SE */
+    s: 344,
     m: 768,
     l: 992,
     xl: 1200,
@@ -70,6 +69,8 @@ export const baseTheme = {
     low: 10,
     mid: 100,
     high: 1000,
+    _foreground: 9999,
+    _background: -1,
   },
 
   spacing: {
@@ -79,8 +80,12 @@ export const baseTheme = {
   },
 
   layout: {
-    gutter: 20,
-    maxWidth: 1200,
+    /* 16px/ 4.44% */
+    gutter: "4.44%",
+    paddingColumn: "16pt",
+    /* 16px/ 2.3% */
+    paddingRow: "2.3%",
+    maxWidth: "1200px",
     grid: {
       columnCount: 12,
     },
@@ -97,6 +102,4 @@ export const baseTheme = {
   borderRadius: "0.3em",
 };
 
-export default new DesignSystem(designTokens, {
-  fontSizeUnit: "rem",
-});
+export default designTokens;
