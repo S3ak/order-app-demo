@@ -14,8 +14,8 @@
     "react-scripts": "3.4.1",
     "styled-components": "^5.1.1",
     "styled-media-query": "^2.1.2",
-    "styled-normalize": "^8.0.7",
-    "styled-tools": "^1.7.2"
+    "styled-tools": "^1.7.2",
+    "polished": "^3.6.5"
   },
   "devDependencies": {
     "@storybook/preset-create-react-app": "^3.1.4",
@@ -32,7 +32,6 @@
     "cz-conventional-changelog": "^3.2.0",
     "husky": "^4.2.5",
     "jest": "^24.9.0",
-    "polished": "^3.6.5",
     "semantic-release": "^17.1.1",
     "storybook-addon-designs": "^5.4.0"
   },
