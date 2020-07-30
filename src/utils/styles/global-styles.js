@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components/macro";
 import { normalize } from "polished";
 import ds from "../../utils/styles/design-system";
 
@@ -25,15 +25,16 @@ export const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
   }
 
-  body {
-    max-height: 100%;
+  body, #root {
+    min-height: 100%;
+    height: 100%;
   }
 
   html,
   body {
     padding: 0;
     margin: 0;
-    background: var(--color-intent-bg);
+    background: var(--color-background);
     font-family: ${ds.get("fontFamilyBase")};
       box-sizing: border-box;
   }
