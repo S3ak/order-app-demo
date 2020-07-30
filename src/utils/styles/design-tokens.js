@@ -3,7 +3,7 @@ import basePalette from "./baseColourPalette";
 const fontFamily = {
   system:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans"',
-  sans: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+  sans: 'muli, "Helvetica Neue", Helvetica, Arial, sans-serif',
   serif: 'Georgia, "Times New Roman", Times, serif',
   mono: 'Menlo, Monaco, "Courier New", monospace',
 };
@@ -20,18 +20,18 @@ export const designTokens = {
     baseFontSize: "14px",
 
     sizes: {
-      xs: "16px",
-      s: "20px",
-      base: "30px",
-      m: "36px",
-      l: "42px",
-      xl: "50px",
-      xxl: "58px",
+      xs: "13pt",
+      s: "14pt",
+      base: "16pt",
+      m: "18pt",
+      l: "22pt",
+      xl: "50pt",
+      xxl: "58pt",
     },
 
     fontFamily,
-    fontFamilyBase: fontFamily.system,
-    fontFamilyHeadings: fontFamily.mono,
+    fontFamilyBase: fontFamily.sans,
+    fontFamilyHeadings: fontFamily.sans,
 
     lineHeight: {
       headings: 1.1,
@@ -86,9 +86,6 @@ export const designTokens = {
     /* 16px/ 2.3% */
     paddingRow: "2.3%",
     maxWidth: "1200px",
-    grid: {
-      columnCount: 12,
-    },
   },
 
   transition: {
