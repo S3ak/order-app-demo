@@ -1,4 +1,5 @@
 import React from "react";
+import Layout from "./components/displays/layout";
 import GlobalStyles from "./utils/styles/global-styles";
 
 const Header = () => (
@@ -52,7 +53,7 @@ const CTASection = () => (
 
 function App() {
   return (
-    <div className="App">
+    <Layout>
       <GlobalStyles />
       <Header />
 
@@ -61,7 +62,7 @@ function App() {
 
       <CollectLocation />
       <CTASection />
-    </div>
+    </Layout>
   );
 }
 
