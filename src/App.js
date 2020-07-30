@@ -1,12 +1,5 @@
 import React from "react";
 import Layout from "./components/displays/layout";
-import GlobalStyles from "./utils/styles/global-styles";
-
-const Header = () => (
-  <div>
-    <h1>Collect order</h1> <div>helper</div>
-  </div>
-);
 
 const Timer = () => (
   <div>
@@ -54,9 +47,6 @@ const CTASection = () => (
 function App() {
   return (
     <Layout>
-      <GlobalStyles />
-      <Header />
-
       <Timer />
       <List />
 

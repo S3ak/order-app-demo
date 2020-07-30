@@ -4,7 +4,7 @@ import { withKnobs } from "@storybook/addon-knobs";
 import { GenericComponent } from "./index";
 
 export default {
-  title: "Displays/Template",
+  title: "Controls/Template",
   component: GenericComponent,
   decorators: [withKnobs],
 };

@@ -2,19 +2,22 @@ import React from "react";
 import PT from "prop-types";
 import { Wrapper, HeaderSection, BodySection } from "./styled";
 import Container from "../container";
+import Header from "../../controls/header";
+import GlobalStyles from "../../../utils/styles/global-styles";
 
 /**
  * The `BaseLayout` Component is used to structure the layout of the web page.
  * It utilises CSS grid to position content.
  * @author Monde Sineke <monde@gmail.com>
  */
-export const BaseLayout = ({ children, headerContent }) => {
+export const BaseLayout = ({ children, HeaderContent }) => {
   return (
     <Wrapper>
-      <HeaderSection>{headerContent}</HeaderSection>
+      <HeaderSection>{HeaderContent}</HeaderSection>
       <BodySection>
         <Container>{children}</Container>
       </BodySection>
+      <GlobalStyles />
     </Wrapper>
   );
 };
@@ -25,6 +28,8 @@ BaseLayout.propTypes = {
   headerContent: PT.node,
 };
 
-BaseLayout.defaultProps = {};
+BaseLayout.defaultProps = {
+  HeaderContent: <Header />,
+};
 
 export default BaseLayout;
