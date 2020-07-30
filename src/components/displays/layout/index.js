@@ -11,10 +11,10 @@ import Container from "../container";
 export const BaseLayout = ({ children, headerContent }) => {
   return (
     <Wrapper>
-      <Container>
-        <HeaderSection>{headerContent}</HeaderSection>
-        <BodySection>{children}</BodySection>
-      </Container>
+      <HeaderSection>{headerContent}</HeaderSection>
+      <BodySection>
+        <Container>{children}</Container>
+      </BodySection>
     </Wrapper>
   );
 };
