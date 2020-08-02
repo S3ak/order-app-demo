@@ -4,7 +4,12 @@ import { Wrapper, TitleCol, TitleImg, Title } from "./styled";
 
 import Skeleton from "./Skeleton";
 import shopIcon from "../../../media/shop.png";
+import Button from "../button";
 
+/**
+ * The `Header` Component is a global component which contains the page title and primary nav and controls.
+ * @author Monde Sineke <monde@gmail.com>
+ */
 export const Header = ({
   isLoading,
   isError,
@@ -31,7 +36,9 @@ export const Header = ({
 
         <Title>{title}</Title>
       </TitleCol>{" "}
-      <button onClick={onCTACB}>{ctaText}</button>
+      <Button onClick={onCTACB} intentType="primary" kind="text">
+        {ctaText}
+      </Button>
     </Wrapper>
   );
 };
@@ -49,7 +56,7 @@ Header.propTypes = {
 Header.defaultProps = {
   isLoading: false,
   isError: false,
-  title: "Collect order",
+  title: "Collect the order",
   titleImgUrl: shopIcon,
   titleImgAlt: "Icon of a shop",
   ctaText: "Help",
