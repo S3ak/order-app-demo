@@ -55,6 +55,7 @@ export const GlobalStyles = createGlobalStyle`
     --color-text: ${ds.brand("black")};
     --color-primary: ${ds.brand("red")};
     --color-secondary: ${ds.brand("green")};
+    --color-neutral: ${ds.brand("white")};
   }
   
   html {
@@ -74,6 +75,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     background: var(--color-background);
+    color: var(--color-text);
     font-family: muli;
     font-family: ${ds.get("type.fontFamilyBase")};
   }
@@ -90,7 +92,7 @@ export const GlobalStyles = createGlobalStyle`
     width: 100%;
   }
 
-  figure, img, h1, h2, h3, h4, h5, h6, li, ul {
+  figure, img, h1, h2, h3, h4, h5, h6, p, li, ul {
     margin: 0;
     padding: 0;
   }
@@ -108,7 +110,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   p {
-    font-size: ${ds.fs("base")}
+    font-size: ${ds.fs("base")};
   }
   
   button {

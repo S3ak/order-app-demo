@@ -20,13 +20,14 @@ export const designTokens = {
     baseFontSize: "14px",
 
     sizes: {
-      xs: "13pt",
-      s: "14pt",
-      base: "16pt",
-      m: "18pt",
-      l: "22pt",
-      xl: "50pt",
-      xxl: "58pt",
+      xxs: "12px",
+      xs: "13px",
+      s: "14px",
+      base: "16px",
+      m: "18px",
+      l: "22px",
+      xl: "50px",
+      xxl: "58px",
     },
 
     fontFamily,
@@ -52,6 +53,8 @@ export const designTokens = {
       green: "#00C853",
       black: "#000000",
       grey: "#E8E8E8",
+      grey2: "#F4F4F4",
+      grey3: "#616263",
       darkGrey: "#8E8F90",
       white: "#FFF",
     },
@@ -81,7 +84,7 @@ export const designTokens = {
 
   layout: {
     /* 16px/ 4.44% */
-    gutter: "4.44%",
+    gutter: "16px",
     paddingColumn: "16pt",
     /* 16px/ 2.3% */
     paddingRow: "2.3%",
