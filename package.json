@@ -45,8 +45,8 @@
     "update:packages": "npx npm-check -u",
     "semantic-release": "semantic-release",
     "commit": "npx git-cz",
-    "storybook": "start-storybook -p 9009 -s storybook-output",
-    "build-storybook": "build-storybook -s storybook-output"
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public -o storybook-output"
   },
   "eslintConfig": {
     "extends": "react-app"
