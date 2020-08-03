@@ -1,11 +1,9 @@
-import DesignSystem from "design-system-utils";
-
 import basePalette from "./baseColourPalette";
 
 const fontFamily = {
   system:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans"',
-  sans: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+  sans: 'muli, "Helvetica Neue", Helvetica, Arial, sans-serif',
   serif: 'Georgia, "Times New Roman", Times, serif',
   mono: 'Menlo, Monaco, "Courier New", monospace',
 };
@@ -17,23 +15,24 @@ const transitions = {
 
 const colorPalette = basePalette;
 
-export const baseTheme = {
+export const designTokens = {
   type: {
     baseFontSize: "14px",
 
     sizes: {
-      xs: "16px",
-      s: "20px",
-      base: "30px",
-      m: "36px",
-      l: "42px",
+      xxs: "12px",
+      xs: "13px",
+      s: "14px",
+      base: "16px",
+      m: "18px",
+      l: "22px",
       xl: "50px",
       xxl: "58px",
     },
 
     fontFamily,
-    fontFamilyBase: fontFamily.system,
-    fontFamilyHeadings: fontFamily.mono,
+    fontFamilyBase: fontFamily.sans,
+    fontFamilyHeadings: fontFamily.sans,
 
     lineHeight: {
       headings: 1.1,
@@ -50,17 +49,20 @@ export const baseTheme = {
     colorPalette,
 
     brand: {
-      red: "#e82219",
-      deeporange: "#ff7200",
-      orange: "#ff9500",
-      green: "#c4d000",
-      teal: "#1aa5c8",
-      navy: "#0052da",
+      red: "#EA433D",
+      green: "#00C853",
+      black: "#000000",
+      grey: "#E8E8E8",
+      grey2: "#F4F4F4",
+      grey3: "#616263",
+      darkGrey: "#8E8F90",
+      white: "#FFF",
     },
   },
 
   breakpoints: {
-    s: 320,
+    /* NOTE: Should be 320 hich is Iphone SE */
+    s: 344,
     m: 768,
     l: 992,
     xl: 1200,
@@ -70,6 +72,8 @@ export const baseTheme = {
     low: 10,
     mid: 100,
     high: 1000,
+    _foreground: 9999,
+    _background: -1,
   },
 
   spacing: {
@@ -79,11 +83,12 @@ export const baseTheme = {
   },
 
   layout: {
-    gutter: 20,
-    maxWidth: 1200,
-    grid: {
-      columnCount: 12,
-    },
+    /* 16px/ 4.44% */
+    gutter: "16px",
+    paddingColumn: "16pt",
+    /* 16px/ 2.3% */
+    paddingRow: "2.3%",
+    maxWidth: "1200px",
   },
 
   transition: {
@@ -97,6 +102,4 @@ export const baseTheme = {
   borderRadius: "0.3em",
 };
 
-export default new DesignSystem(designTokens, {
-  fontSizeUnit: "rem",
-});
+export default designTokens;
