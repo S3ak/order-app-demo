@@ -56,6 +56,7 @@ export const GlobalStyles = createGlobalStyle`
     --color-primary: ${ds.brand("red")};
     --color-secondary: ${ds.brand("green")};
     --color-neutral: ${ds.brand("white")};
+    --color-mute: ${ds.brand("black2")};
   }
   
   html {

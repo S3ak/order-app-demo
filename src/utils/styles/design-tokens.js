@@ -52,6 +52,7 @@ export const designTokens = {
       red: "#EA433D",
       green: "#00C853",
       black: "#000000",
+      black2: "#383838",
       grey: "#E8E8E8",
       grey2: "#F4F4F4",
       grey3: "#616263",
