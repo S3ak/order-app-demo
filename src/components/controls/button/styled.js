@@ -17,6 +17,46 @@ const secondaryMixin = css`
   border: 1px solid currentColor;
 `;
 
+const circleMixin = css`
+  border: 3px solid currentColor;
+  border-radius: 100%;
+  width: 98px;
+  height: 98px;
+  background-color: currentColor;
+
+  svg {
+    color: var(--color-neutral);
+    width: 29px;
+    height: 20px;
+  }
+`;
+
+const mutedStatusMixin = css`
+  color: var(--color-mute);
+  border-color: #424242;
+
+  svg {
+    color: #424242;
+  }
+`;
+
+const successStatusMixin = css`
+  color: var(--color-success);
+  border-color: #12773c;
+
+  ${ifProp(
+    { kind: "circle" },
+    css`
+      box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+    `
+  )}
+`;
+
+const dangerStatusMixin = css`
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+`;
+
 export const Wrapper = styled.button`
   margin: 0;
   display: flex;
@@ -37,9 +77,16 @@ export const Wrapper = styled.button`
       text: textMixin,
       primary: primaryMixin,
       secondary: secondaryMixin,
+      circle: circleMixin,
     },
     primaryMixin
   )};
+
+  ${switchProp(prop("status"), {
+    success: successStatusMixin,
+    danger: dangerStatusMixin,
+    muted: mutedStatusMixin,
+  })};
 
   ${ifProp(
     "isFullWidth",

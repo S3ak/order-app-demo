@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Section } from "./index";
+import Section from "./index";
 
 export default {
   title: "Displays/Section",
