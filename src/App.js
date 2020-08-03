@@ -1,57 +1,41 @@
 import React from "react";
 import Layout from "./components/displays/layout";
 
-const Timer = () => (
-  <div>
-    <div>08:05</div>
-    <p>minutes remaining</p>
-    <div> - </div>
-  </div>
-);
+import Timer from "./components/displays/timer";
+import Section from "./components/displays/section";
+import OrderDetails from "./components/controls/order-details";
+import OrderAddress from "./components/controls/order-address";
+import Button from "./components/controls/button";
 
-const List = () => (
-  <article>
-    <div>
-      <h2>Collect order #093</h2>
-      <p>Pick up instructions</p>
-      <p>Go to counter 1 on the left where the sign for ‘all pickups’ is</p>
-      <hr />
-    </div>
-
-    <div>
-      <h3>BigMac Meal</h3>
-
-      <p>Large Fanta, Super Size Fries</p>
-      <hr />
-    </div>
-  </article>
-);
-
-const CollectLocation = () => (
-  <div>
-    <h2>McDonald’s Rondebosch</h2>
-    <p>51 Main Rd, Rondebosch, Cape Town, 7700</p>
-    <div>
-      <button>⤴ Directions</button>
-      <button>Call</button>
-    </div>
-  </div>
-);
-
-const CTASection = () => (
-  <div>
-    <button>Ready to deliver</button>
-  </div>
-);
+import mockOrderDetailsList from "./utils/mocks/mock-order-details-list";
 
 function App() {
+  const handleOnDeliverAction = () => {
+    console.warn("User clicked ready to deliver");
+  };
+
   return (
     <Layout>
-      <Timer />
-      <List />
+      <Timer
+        time="08:05"
+        description="minutes remaining"
+        currentProgressVal="0.6"
+      />
 
-      <CollectLocation />
-      <CTASection />
+      <Section>
+        <OrderDetails list={mockOrderDetailsList} />
+      </Section>
+
+      <OrderAddress
+        title="McDonald’s Rondebosch"
+        description="51 Main Rd, Rondebosch, Cape Town, 7700"
+      />
+
+      <Section>
+        <Button onClick={handleOnDeliverAction} isFullWidth>
+          Ready to deliver
+        </Button>
+      </Section>
     </Layout>
   );
 }
