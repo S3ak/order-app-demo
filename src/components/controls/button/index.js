@@ -17,6 +17,7 @@ export const Button = ({
   Icon,
   kind,
   intentType,
+  status,
   onClick,
 }) => {
   if (isLoading) {
@@ -39,8 +40,9 @@ export const Button = ({
     <Wrapper
       kind={kind}
       intentType={intentType}
-      onClick={onClick}
       isFullWidth={isFullWidth}
+      status={status}
+      onClick={onClick}
     >
       {Icon && <IconWrapper>{Icon}</IconWrapper>}
       {children}
@@ -53,6 +55,7 @@ Button.propTypes = {
   Icon: PT.node,
   kind: PT.oneOf(["text", "default"]),
   intentType: PT.oneOf(["danger", "primary", "secondary"]),
+  status: PT.oneOf(["success", "danger", "muted"]),
   isLoading: PT.bool,
   isError: PT.bool,
   isProcessing: PT.bool,
