@@ -2,7 +2,11 @@ Hi 👋🏾
 
 ## Description
 
-This is basically a basic react demo showcasing a bootstrap DIY design system using styled-components and other extrna npm plugins. To view the production site click [here](https://app.netlify.com/sites/order-demo/overview).
+This is basically a basic react demo showcasing a bootstrap DIY design system using styled-components and other extrna npm plugins. To view the production site click [here](https://order-demo.netlify.app/). The storybook DSL is an image of the staging enviroment (Master branch)
+
+- [Production](https://order-demo.netlify.app/)
+- [Storybook design system language](https://order-app-demo-dsl.netlify.app/)
+- [Deployement pipeline](https://order-app-demo-dsl.netlify.app/)
 
 There is no global state machine been used but I do use react v16^ hooks.
 
