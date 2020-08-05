@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components/macro";
 import { ifProp } from "styled-tools";
 import { rgba } from "polished";
+import { animated } from "react-spring";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -46,7 +47,7 @@ export const ProgressCircle = styled.div`
   align-items: center;
 `;
 
-export const Time = styled.div`
+export const Time = styled(animated.div)`
   width: 100%;
   font-size: 38px;
   font-weight: bolder;

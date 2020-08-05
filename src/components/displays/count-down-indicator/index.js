@@ -3,6 +3,7 @@ import useCountDown from "react-countdown-hook";
 import { useTimeoutFn } from "react-use";
 import PT from "prop-types";
 import { FaCheck, FaTimes } from "react-icons/fa";
+import { useSpring, animated } from "react-spring";
 
 import {
   Wrapper,
@@ -68,6 +69,20 @@ export const CountDownIndicator = ({
 }) => {
   const [timeLeft, start] = useCountDown(initialTime, interval);
 
+  const formattedTime = timeLeft ? timeLeft / 1000 : initialTime / 1000;
+  const percentage = isSuccess
+    ? 0
+    : isFailure
+    ? 100
+    : convertToPercentage(formattedTime, initialTime / 1000);
+  const trailStrokeColor = getProgressColor(percentage);
+
+  const springProps = useSpring({ value: percentage, formattedTime });
+
+  const strokeDasharray = springProps.value.interpolate(
+    (v) => `${v} ${100 - v}`
+  );
+
   useTimeoutFn(start, delay);
 
   if (isLoading) {
@@ -77,14 +92,6 @@ export const CountDownIndicator = ({
   if (isError) {
     return <div>Something went wrong</div>;
   }
-
-  const formattedTime = timeLeft ? timeLeft / 1000 : initialTime / 1000;
-  const percentage = isSuccess
-    ? 0
-    : isFailure
-    ? 100
-    : convertToPercentage(formattedTime, initialTime / 1000);
-  const trailStrokeColor = getProgressColor(percentage);
 
   return (
     <Wrapper onClick={() => start()}>
@@ -101,14 +108,14 @@ export const CountDownIndicator = ({
               stroke={trailStrokeColor}
             />
 
-            <circle
+            <animated.circle
               className="path"
               cx={circleConfig.x}
               cy={circleConfig.y}
               r={circleConfig.radio}
               fill="transparent"
               stroke={strokeColor}
-              strokeDasharray={`${percentage} ${100 - percentage}`}
+              strokeDasharray={strokeDasharray}
               strokeDashoffset={INITIAL_OFFSET}
               stroke-width={strokeWidth}
             />
