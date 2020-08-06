@@ -50,6 +50,7 @@ export const designTokens = {
 
     brand: {
       red: "#EA433D",
+      yellow: "#ffac00",
       green: "#00C853",
       black: "#000000",
       black2: "#383838",

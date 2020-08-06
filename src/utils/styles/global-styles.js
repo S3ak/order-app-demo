@@ -49,6 +49,7 @@ export const GlobalStyles = createGlobalStyle`
     --color-cta: ${ds.brand("red")};
     --color-background: ${ds.brand("grey")};
     --color-danger: ${ds.brand("red")};
+    --color-warning: ${ds.brand("orange")};
     --color-success: ${ds.brand("green")};
     --color-disabled: ${ds.brand("grey")};
     --color-info: ${ds.brand("grey")};

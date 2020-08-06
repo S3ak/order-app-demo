@@ -30,19 +30,19 @@ const convertToPercentage = (val, maxVal = 30) => {
 };
 
 const getProgressColor = (val) => {
-  let color = "#00C853";
+  let color = "var(--color-success)";
 
   switch (true) {
     case val < 50:
-      color = "#00C853";
+      color = "var(--color-success)";
       break;
 
     case val >= 50 && val <= 83:
-      color = "#ffac00";
+      color = "var(--color-warning)";
       break;
 
     default:
-      color = "#ff0000";
+      color = "var(--color-danger)";
       break;
   }
 
