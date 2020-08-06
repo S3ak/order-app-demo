@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PT from "prop-types";
 import { FaCheck, FaTimes } from "react-icons/fa";
+import useCountDown from "react-countdown-hook";
 import LongPressable from "react-longpressable";
 
 import CountDownIndicator from "../../displays/count-down-indicator";
@@ -29,9 +30,12 @@ export const IncomingDeliveryIntent = ({
   isError,
   errorMsg = "Something went wrong",
   title = "New delivery",
+  duration = 30 * 1000, // initial time in milliseconds, defaults to 60000
+  interval = 1000, // interval to change remaining time amount, defaults to 1000
 }) => {
   const [isAccepted, setIsAccepted] = useState(false);
   const [isDeclined, setIsDeclined] = useState(false);
+  const [timeLeft, start] = useCountDown(duration, interval);
 
   const handleOnIntentAction = (decision) => {
     if (isAccepted || isDeclined) {
@@ -74,7 +78,13 @@ export const IncomingDeliveryIntent = ({
       </HeadingSection>
 
       <DescriptionSection>
-        <CountDownIndicator isSuccess={isAccepted} isFailure={isDeclined} />
+        <CountDownIndicator
+          timeLeft={timeLeft}
+          duration={duration}
+          isSuccess={isAccepted}
+          isFailure={isDeclined}
+          startFn={start}
+        />
       </DescriptionSection>
 
       <FooterSection>

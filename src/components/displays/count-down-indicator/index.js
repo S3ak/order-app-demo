@@ -1,5 +1,4 @@
 import React from "react";
-import useCountDown from "react-countdown-hook";
 import { useTimeoutFn } from "react-use";
 import PT from "prop-types";
 import { FaCheck, FaTimes } from "react-icons/fa";
@@ -17,9 +16,7 @@ import {
 
 import Skeleton from "./Skeleton";
 
-const INITIAL_OFFSET = 25;
-const initialTime = 30 * 1000; // initial time in milliseconds, defaults to 60000
-const interval = 1000; // interval to change remaining time amount, defaults to 1000
+const _INITIAL_OFFSET = 25;
 
 const circleConfig = {
   viewBox: "0 0 38 38",
@@ -57,7 +54,7 @@ const getProgressColor = (val) => {
  * @author Monde Sineke <monde@gmail.com>
  */
 export const CountDownIndicator = ({
-  duration = 30,
+  duration,
   isLoading,
   isError,
   strokeColor = "#979797",
@@ -66,24 +63,24 @@ export const CountDownIndicator = ({
   isSuccess,
   isFailure,
   delay = 2000,
+  timeLeft,
+  startFn,
 }) => {
-  const [timeLeft, start] = useCountDown(initialTime, interval);
-
-  const formattedTime = timeLeft ? timeLeft / 1000 : initialTime / 1000;
+  const formattedTime = timeLeft ? timeLeft / 1000 : duration / 1000;
   const percentage = isSuccess
     ? 0
     : isFailure
     ? 100
-    : convertToPercentage(formattedTime, initialTime / 1000);
-  const trailStrokeColor = getProgressColor(percentage);
+    : convertToPercentage(formattedTime, duration / 1000);
 
+  const trailStrokeColor = getProgressColor(percentage);
   const springProps = useSpring({ value: percentage, formattedTime });
 
   const strokeDasharray = springProps.value.interpolate(
     (v) => `${v} ${100 - v}`
   );
 
-  useTimeoutFn(start, delay);
+  useTimeoutFn(startFn, delay);
 
   if (isLoading) {
     return <Skeleton />;
@@ -94,7 +91,7 @@ export const CountDownIndicator = ({
   }
 
   return (
-    <Wrapper onClick={() => start()}>
+    <Wrapper onClick={() => startFn()}>
       <OuterCircle>
         <Figure>
           <svg viewBox={circleConfig.viewBox}>
@@ -116,7 +113,7 @@ export const CountDownIndicator = ({
               fill="transparent"
               stroke={strokeColor}
               strokeDasharray={strokeDasharray}
-              strokeDashoffset={INITIAL_OFFSET}
+              strokeDashoffset={_INITIAL_OFFSET}
               stroke-width={strokeWidth}
             />
           </svg>
@@ -137,7 +134,7 @@ export const CountDownIndicator = ({
 
           {!isSuccess && !isFailure && (
             <>
-              <Time>{formattedTime}</Time>
+              <Time>{formattedTime.toFixed()}</Time>
               <Description>{innerText}</Description>
             </>
           )}
