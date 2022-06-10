@@ -35,7 +35,7 @@
     "cz-conventional-changelog": "^3.2.0",
     "husky": "^4.2.5",
     "jest": "^24.9.0",
-    "semantic-release": "^17.1.1",
+    "semantic-release": "^19.0.3",
     "storybook-addon-designs": "^5.4.0"
   },
   "scripts": {
